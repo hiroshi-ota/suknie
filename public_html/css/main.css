@@ -1,0 +1,19 @@
+body{
+    background-color: thistle;
+}
+
+#navAndSlider nav{
+    width: 70%;
+    height: 30px;
+    background-color: mediumorchid;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#navAndSlider nav ul li{
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+}
+
