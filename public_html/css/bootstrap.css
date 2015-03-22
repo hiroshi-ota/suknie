@@ -3823,6 +3823,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   visibility: hidden;
 }
 .tab-content > .active {
+  margin-top: 20px;
   display: block;
   visibility: visible;
 }

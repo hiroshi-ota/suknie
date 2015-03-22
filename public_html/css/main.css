@@ -5,7 +5,7 @@ body{
 #navAndSlider nav{
     width: 70%;
     height: 30px;
-    background-color: mediumorchid;
+    /*background-color: mediumorchid;*/
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -17,3 +17,4 @@ body{
     display: inline-block;
 }
 
+/*Slider main*/

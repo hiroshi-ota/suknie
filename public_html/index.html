@@ -10,34 +10,113 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            /* Prevents slides from flashing */
+            #slides {
+                display:none;
+            }
+        </style>
         <style>
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <!--        <link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
         <link rel="stylesheet" href="css/main.css">
-
+        <script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/slider/jquery.slides.min.js" type="text/javascript"></script>
+        <script src="js/vendor/bootstrap.js" type="text/javascript"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    
+
+
+
+
         <div class="container" id="navAndSlider">
-            <nav>
-                <ul>
-                    <li><a href="#" title="Informacje o firmie">O nas</a></li>
-                    <li><a href="/strony/katalog.html" title="Katalog">Suknie</a></li>
+
+            <img class="navbar-brand" style="float: top" alt="logo" src="images/btns-next-prev.png">
+
+
+
+            <div role="tabpanel">
+                <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
+                    <li role="presentation" class="active"><a href="#onas" aria-controls="onas" role="tab" data-toggle="tab">O nas</a></li>
+                    <li role="presentation"><a href="#katalog" aria-controls="katalog" role="tab" data-toggle="tab">Katalog</a></li>
+                    <li role="presentation"><a href="#informacje" aria-controls="informacje" role="tab" data-toggle="tab">Informacje</a></li>
                 </ul>
-            </nav>
-            
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="onas">
+                        <p class="text-justify col-lg-6" style="padding-left: 0">Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy
+                            Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy</p>
+
+                        <div id="slides" style="width: 50%; margin-left: auto; margin-right: auto; position: relative;">
+                            <img src="images/empire.jpg" alt=""/>
+                            <img src="images/klasyczna.jpg" alt=""/>
+                            <img src="images/princessa.jpg" alt=""/>
+                            <img src="images/syrena.jpg" alt=""/>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="katalog">
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="informacje">zonk</div>
+                </div>
+            </div>
         </div>
 
-     
+
+        <script>
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        </script>
+        <script>
+            $(function () {
+                $("#slides").slidesjs({
+                    width: 940,
+                    height: 528
+                });
+            });
+        </script>
+
+        <!-- Pasek ładowania strony /-->
+        <script>
+            var progress = setInterval(function () {
+                var $bar = $('.progress-bar');
+
+                if ($bar.width() >= '100%') {
+                    clearInterval(progress);
+                    $('.progress').removeClass('active');
+                } else {
+                    $bar.width($bar.width() + '10%');
+                }
+
+            }, 100);
+        </script>
+
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+
+            <div class="progress progress-striped active">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+        </nav>
+
     </body>
 </html>
