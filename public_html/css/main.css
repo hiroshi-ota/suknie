@@ -1,7 +1,27 @@
-body{
-    background-color: thistle;
+html{
+    min-height: 100%;
 }
 
+body{
+    /*background-color: #9966CC;*/
+    background-image: -webkit-linear-gradient(bottom, #D8BFD8 0%, white 100%);
+             background-image:      -o-linear-gradient(bottom, #D8BFD8 0%, white 100%);
+             background-image: -webkit-gradient(linear, bottom, right top, from(#D8BFD8), to(white));
+             background-image:         linear-gradient(to top, #D8BFD8 0%, white 100%);
+             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+             background-repeat: repeat-x;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a{
+    color: #8E236B;
+}
 #navAndSlider nav{
     width: 70%;
     height: 30px;
@@ -17,4 +37,15 @@ body{
     display: inline-block;
 }
 
+/*ZDJĘCIA OKRĄGŁE*/
+.img-center {
+	margin: 0 auto;
+}
+
 /*Slider main*/
+
+@media (max-width: 1300px) {
+    body{
+        background-color: #D8BFD8;
+    }
+}
