@@ -1424,6 +1424,7 @@ pre code {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    margin-top: 40px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
     float: left;
@@ -3650,7 +3651,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 5px 15px;
+    font-size: 15px;
+    font-weight: bolder;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -3685,6 +3688,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs {
     border-bottom: 1px solid #ddd;
 }
+
 .nav-tabs > li {
     float: left;
     margin-bottom: -1px;
@@ -3733,7 +3737,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs.nav-justified > li > a {
     margin-right: 0;
-    border-radius: 4px;
+    border-radius: 20px;
 }
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
@@ -3743,7 +3747,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
     .nav-tabs.nav-justified > li > a {
         border-bottom: 1px solid #ddd;
-        border-radius: 4px 4px 0 0;
+        border-radius: 50px 50px 0 0;
     }
     .nav-tabs.nav-justified > .active > a,
     .nav-tabs.nav-justified > .active > a:hover,
@@ -3822,6 +3826,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .tab-content > .tab-pane {
     display: none;
     visibility: hidden;
+}
+
+/*PIERWSZA LITERA W OPISACH*/
+.tab-content p::first-letter{
+    font-family: nice;
+    font-size: 25px;
+    font-weight:bolder;
+    
 }
 .tab-content > .active {
     margin-top: 20px;
@@ -3944,10 +3956,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
     float: left;
-    height: 50px;
-    padding: 15px 15px;
+    height: 125px;
+    padding: 0px 15px;
     font-size: 18px;
     line-height: 20px;
+    margin-bottom: 35px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {

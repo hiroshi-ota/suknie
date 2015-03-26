@@ -19,6 +19,7 @@ h3,
 h4,
 h5,
 h6,
+li,
 a{
     color: #8E236B;
 }
@@ -42,8 +43,17 @@ a{
 	margin: 0 auto;
 }
 
-/*Slider main*/
+/*CZCIONKI*/
+@font-face{
+    font-family: nice;
+    src: url(../fonts/absolut1.ttf);
+}
 
+.nice{
+    font-family: nice;
+}
+
+/*RESPOSNIVE*/
 @media (max-width: 1300px) {
     body{
         background-color: #D8BFD8;
