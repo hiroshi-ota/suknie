@@ -10,6 +10,14 @@ body{
              background-image:         linear-gradient(to top, #D8BFD8 0%, white 100%);
              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
              background-repeat: repeat-x;
+    max-width: 100%;        
+}
+
+.obrazek{
+    min-height: 100%;
+    position: absolute;
+    opacity: 0.2;
+    z-index: -200;
 }
 
 p,

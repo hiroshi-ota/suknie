@@ -3962,6 +3962,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     line-height: 20px;
     margin-bottom: 35px;
 }
+.navbar-contact {
+    float: right;
+    height: 70px;
+    padding: 0px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 40px 0px 25px 0px;
+    opacity: 0.8;
+}
+
 .navbar-brand:hover,
 .navbar-brand:focus {
     text-decoration: none;
@@ -5082,6 +5092,10 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
     padding: 15px;
+}
+
+.panel-body a{
+    text-decoration: none;
 }
 .panel-heading {
     padding: 10px 15px;
