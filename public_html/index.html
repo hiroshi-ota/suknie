@@ -13,24 +13,37 @@
         <link href="css/reset.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/main.css">
+        <link href="css/slimbox2.css" rel="stylesheet" type="text/css"/>
+
+
+
         <style>
             /* Prevents slides from flashing */
             #slides {
                 display:none;
             }
         </style>
+
+        <!-- odstępy od brzegów -->
         <style>
             body {
                 padding-top: 30px;
                 padding-bottom: 20px;
             }
         </style>
-        <!--        <link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
-        <link rel="stylesheet" href="css/main.css">
+
+        <!--        <link rel="stylesheet" href="css/bootstrap-theme.min.css">-->    
+        <script src="js/progressbar.js" type="text/javascript"></script>
         <script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="js/slider/jquery.slides.min.js" type="text/javascript"></script>
         <script src="js/vendor/bootstrap.js" type="text/javascript"></script>
+        <script src="js/slimbox2.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+        <style>
+
+        </style>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -39,25 +52,19 @@
 
 
 
-<!--        <div class="obrazek hidden-xs">
-            <img alt="tlo" src="images/tlo.png">
-        </div>-->
-        
+        <!--        <div class="obrazek hidden-xs">
+                    <img alt="tlo" src="images/tlo.png">
+                </div>-->
+        <div class="loading-mask"></div>
+
+        <div class="progressbar" id="progress"></div>
+
         <div class="container">
             <img class="navbar-brand" alt="logo" src="images/logo_s.png">
-            <img class="navbar-contact" alt="logo" src="images/kontakt.png">
-            
-<!--            <ul class="navbar-right col-lg-4">
-                <li><span class="glyphicon glyphicon-earphone"></span> 56 652 23 19</li>
-                <li style="margin-top: 10px"><span class="glyphicon glyphicon-home"></span> ul. Szewska 10</li>
-                <li style="margin-top: 10px"><span class="glyphicon glyphicon-tower"></span> Toruń</li>
-            </ul>-->
+            <img class="navbar-contact" alt="kontakt" src="images/kontakt.png">
         </div>
-        
-<!--        <div class="container navbar-right">
-            Coś tam coś tam...
-        </div>-->
-        
+
+
         <div class="container" id="navAndSlider">
 
             <!--            <img class="navbar navbar-default navbar-fixed-top" style="float: top;" alt="logo" src="images/btns-next-prev.png">-->  
@@ -81,16 +88,25 @@
                             Opis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmyOpis naszej firmy. Opis naszej firmy</p>
 
                         <!-- SLIDER /-->
-                        <div class="hidden-xs" id="slides" style="width: 40%; margin-left: auto; margin-right: auto; position: relative;">
-                            <img class="img-rounded" src="images/empire.jpg" alt=""/>
-                            <img class="img-rounded" src="images/klasyczna.jpg" alt=""/>
-                            <img class="img-rounded" src="images/princessa.jpg" alt=""/>
-                            <img class="img-rounded" src="images/syrena.jpg" alt=""/>
+                        <div class="hidden-xs" id="slides" style="width: 40%; margin-left: auto; margin-right: 2px; position: relative;">
+
+                            <a href="images/empire.jpg" title="Suknia w stylu empire" rel="lightbox-slider" >
+                                <img class="img-rounded" src="images/empire_s.jpg" alt="empire" />
+                            </a>
+                            <a href="images/klasyczna.jpg" title="Suknia w stylu klasycznym" rel="lightbox-slider" >
+                                <img class="img-rounded" src="images/klasyczna_s.jpg" alt="klasyczna" />
+                            </a>
+                            <a href="images/princessa.jpg" title="Suknia w stylu princessa" rel="lightbox-slider" >
+                                <img class="img-rounded" src="images/princessa_s.jpg" alt="princessa" />
+                            </a>
+                            <a href="images/syrena.jpg" title="Suknia w stylu syrena" rel="lightbox-slider" >
+                                <img class="img-rounded" src="images/syrena_s.jpg" alt="syrena" />
+                            </a>
+
                         </div>
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="katalog">
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <h2 class="page-header">Nasze suknie</h2>
@@ -250,11 +266,18 @@
         <script>
             $(function () {
                 $("#slides").slidesjs({
-                    width: 940,
-                    height: 1000
+                    width: 400,
+                    height: 300
                 });
             });
         </script>
+
+        <!--        <script type="text/javascript">
+                    /*Fade strony*/
+                    $(document).ready(function () {
+                        $(this).hide().fadeIn(500);
+                    });
+                </script>-->
 
         <!-- Pasek ładowania strony /-->
         <!--        <script>
@@ -271,12 +294,12 @@
                     }, 100);
                 </script>-->
 
-<!--        <nav class="navbar navbar-default navbar-fixed-bottom">
-
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar" style="width: 0%;"></div>
-                        </div>
-        </nav>-->
+        <!--        <nav class="navbar navbar-default navbar-fixed-bottom">
+        
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" style="width: 0%;"></div>
+                                </div>
+                </nav>-->
 
     </body>
 </html>
