@@ -1,3 +1,4 @@
+//LOADING
 $(document).ready(function onLoad() {
 
 
@@ -18,4 +19,5 @@ window.onload = function(){
 	$('.progressbar').delay(1000).fadeOut(400);
 };
 
+//GALERIA
 
