@@ -45,7 +45,7 @@
         while ($file_name = readdir($dir)) {
             if (($file_name != ".") && ($file_name != "..")) {
                 $img = 'images/' . $file_name;
-                echo '<img src="' . $img . '" alt="obrazek" />';
+                echo '<img src="' . $img . '" alt="obrazek" class="img-thumbnail" style="height:200px" />';
                 echo ' ';
             }
         }

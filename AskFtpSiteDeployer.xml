@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><FtpSiteDeployer basedir="/public_html/suknie" createbkp="no" directorycloaking="CVS" host="85.128.135.13" pass="Agnieszka123" port="21" project-type="HTML5" user="mpadpl"/></root>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><FtpSiteDeployer basedir="/public_html/suknie/" createbkp="no" directorycloaking="CVS" host="85.128.135.13" pass="Agnieszka123" port="21" project-type="HTML5" user="mpadpl"/></root>
