@@ -34,6 +34,7 @@
 
         <?php
         $adres = htmlspecialchars($_GET["image"] . ".jpg");
+        $local = htmlspecialchars($_GET["local"]);
         $txt = file(htmlspecialchars($_GET["image"]) . ".txt");
         ?>
 
@@ -42,46 +43,36 @@
             <h2 class="page-header" style="margin-top: 0"><?php echo $txt[0]; ?></h2>
 
             <div class="col-xs-6">
-                <img class="img-rounded" src="<?php echo $adres ?>" alt="działa!" style="height: 700px">
+                <a href="<?php echo $adres ?>" title="Suknia w stylu empire" rel="lightbox" >
+                    <img class="img-rounded img-responsive" src="<?php echo $adres ?>" alt="empire" />
+                </a>
             </div>
 
-            <div class="col-xs-6">
-                <p style="margin-bottom: 30px">
+            <div class="col-md-6 col-xs-12">
+                <p style="margin-bottom: 50px">
                     <?php
                     echo trim($txt[1]);
                     ?>
                 </p>
                 <div class="row" style="text-align: center">
                     <?php
-                    $dirname = "images/klasyczna/";
+                    $dirname = $local;
                     $images = glob($dirname . "*.jpg");
                     echo '<p class:"page-header">Podobne propozycje: </p>';
 
                     foreach ($images as $image) {
-                        if($image != $adres){
-                        echo '<img src="' . $image . '" alt="obrazek" class="img-thumbnail" style="height:200px" />';
+                        if (($image != $adres) && (strstr($image, "_s") !== False)) {
+                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
+                            . '<button class="btn-link" type="submit">'
+                            . '<input name="image" type="image" src="' . $image . '" class="img-thumbnail form-inline" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
+                            . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
+                            . '</button>'
+                            . '</form>';
                         }
                     }
                     ?>
                 </div>
             </div>
-
-
-            <?php
-//        $directory = "./images/klasyczna";
-//        $dir = opendir($directory);
-//
-//        while ($file_name = readdir($dir)) {
-//            if (($file_name != ".") && ($file_name != "..")) {
-//                $img = 'images/klasyczna/' . $file_name;
-//                echo '<img src="' . $img . '" alt="obrazek" class="img-thumbnail" style="height:200px" />';
-//                echo ' ';
-//            }
-//        }
-//
-//        closedir($dir);
-//        
-            ?>
 
         </div>
     </body>
