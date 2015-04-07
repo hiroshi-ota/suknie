@@ -33,26 +33,57 @@
     <body>
 
         <?php
-        $adres = htmlspecialchars($_GET["image"]);
+        $adres = htmlspecialchars($_GET["image"] . ".jpg");
+        $txt = file(htmlspecialchars($_GET["image"]) . ".txt");
         ?>
 
-        <img src="<?php echo $adres ?>" alt="działa!">
+        <div class="container">
 
-        <?php
-        $directory = "./images";
-        $dir = opendir($directory);
+            <h2 class="page-header" style="margin-top: 0"><?php echo $txt[0]; ?></h2>
 
-        while ($file_name = readdir($dir)) {
-            if (($file_name != ".") && ($file_name != "..")) {
-                $img = 'images/' . $file_name;
-                echo '<img src="' . $img . '" alt="obrazek" class="img-thumbnail" style="height:200px" />';
-                echo ' ';
-            }
-        }
+            <div class="col-xs-6">
+                <img class="img-rounded" src="<?php echo $adres ?>" alt="działa!" style="height: 700px">
+            </div>
 
-        closedir($dir);
-        ?>
+            <div class="col-xs-6">
+                <p style="margin-bottom: 30px">
+                    <?php
+                    echo trim($txt[1]);
+                    ?>
+                </p>
+                <div class="row" style="text-align: center">
+                    <?php
+                    $dirname = "images/klasyczna/";
+                    $images = glob($dirname . "*.jpg");
+                    echo '<p class:"page-header">Podobne propozycje: </p>';
 
+                    foreach ($images as $image) {
+                        if($image != $adres){
+                        echo '<img src="' . $image . '" alt="obrazek" class="img-thumbnail" style="height:200px" />';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+
+
+            <?php
+//        $directory = "./images/klasyczna";
+//        $dir = opendir($directory);
+//
+//        while ($file_name = readdir($dir)) {
+//            if (($file_name != ".") && ($file_name != "..")) {
+//                $img = 'images/klasyczna/' . $file_name;
+//                echo '<img src="' . $img . '" alt="obrazek" class="img-thumbnail" style="height:200px" />';
+//                echo ' ';
+//            }
+//        }
+//
+//        closedir($dir);
+//        
+            ?>
+
+        </div>
     </body>
 </html>
 
