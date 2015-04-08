@@ -10,7 +10,9 @@ body{
     background-image:         linear-gradient(to top, #D8BFD8 0%, white 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
     background-repeat: repeat-x;
-    max-width: 100%;        
+    max-width: 100%;  
+/*    background-image: url("../images/tlo2.png");
+    background-size: cover;*/
 }
 
 .obrazek{
@@ -31,6 +33,18 @@ li,
 a{
     color: #8E236B;
 }
+
+.tlo{
+    position: absolute;
+    background-image: url("../images/tlo.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0.2;
+    z-index: -100;
+}
+
 #navAndSlider nav{
     width: 70%;
     height: 30px;
@@ -54,6 +68,21 @@ a{
 /*ZDJĘCIA OKRĄGŁE*/
 .img-center {
     margin: 0 auto;
+}
+
+.img-circle-main{
+    border-radius: 200px;
+}
+
+/*FORM*/
+.img-circle-katalog{
+    border-radius: 50px;
+}
+.img-shadow{
+    box-shadow: 0px 0px 25px grey;
+}
+.btn-katalog{
+    padding: 25px 20px 25px 20px;
 }
 
 /*CZCIONKI*/

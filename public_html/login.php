@@ -31,26 +31,20 @@
         <script src="js/main.js" type="text/javascript"></script>
     </head>
     <body>
-        
-        <div class="tlo"></div>
-        
+
         <?php
         $adres = htmlspecialchars($_GET["image"] . ".jpg");
         $local = htmlspecialchars($_GET["local"]);        
         $txt = file(htmlspecialchars($_GET["image"]) . ".txt");
         ?>
 
-        <!--LOADING-->
-        <div class="loading-mask"></div>
-        <div class="progressbar" id="progress"></div>
-        
         <div class="container">
 
             <h2 class="page-header" style="margin-top: 0"><?php echo $txt[0]; ?></h2>
 
             <div class="col-xs-6">
                 <a href="<?php echo $adres ?>" title="Suknia w stylu empire" rel="lightbox" >
-                    <img class="img-circle-main img-responsive img-shadow" src="<?php echo $adres ?>" alt="empire" />
+                    <img class="img-rounded img-responsive" src="<?php echo $adres ?>" alt="empire" />
                 </a>
             </div>
 
@@ -67,7 +61,7 @@
                     echo '<p class:"page-header">Podobne propozycje: </p>';
 
                     foreach ($images as $image) {
-                        if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr(substr($image, 0, strpos($image, ".")),"slider") !== TRUE)) {
+                        if (($image != $adres) && (strstr($image, "_s") !== False)) {
                             echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
                             . '<button class="btn-link" type="submit">'
                             . '<input name="image" type="image" src="' . $image . '" class="img-thumbnail form-inline" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
