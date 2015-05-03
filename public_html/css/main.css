@@ -139,3 +139,9 @@ a{
 .no-js #onas p{
     text-align: center;
 }
+
+/*FIREFOX*/
+.ff .btn-link{
+    margin: 10px;
+    background: black;
+}
