@@ -65,18 +65,23 @@
                             <?php
                             $dirname = $local;
                             $images = glob($dirname . "*.jpg");
+                            $ilosc = 1;
+                            $granica = 6;
                             echo '<p class:"page-header">Podobne propozycje: </p>';
-
+                            
                             foreach ($images as $image) {
-                                if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE)) {
+                                if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
                                     echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
                                     . '<button class="ff btn-link" type="submit">'
                                     . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
                                     . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
                                     . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
                                     . '</button>'
-                                    . '</form>';
+                                    . '</form>'
+                                    .  $ilosc;
+                                     $ilosc ++;
                                 }
+                               
                             }
                             ?>
                 </div>
