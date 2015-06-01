@@ -50,7 +50,7 @@
             <h2 class="page-header" style="margin-top: 0"><?php echo $txt[0]; ?></h2>
 
                     <div class="col-xs-6">
-                        <a href="<?php echo $adres ?>" title="Suknia w stylu empire" rel="lightbox" >
+                        <a href="<?php echo $adres ?>" title="Suknia <?php echo substr($local, strpos($local, "/")+1)?>" rel="lightbox" >
                             <img class="img-circle-main img-responsive img-shadow" src="<?php echo $adres ?>" alt="empire" />
                         </a>
                     </div>
