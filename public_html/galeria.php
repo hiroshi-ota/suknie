@@ -35,55 +35,70 @@
         <div class="tlo"></div>
 
         <?php
+        $imageTab = explode("/", htmlspecialchars($_GET["image"]));
+        $imageName = $imageTab[2];
         $adres = htmlspecialchars($_GET["image"] . '.jpg');
         $local = htmlspecialchars($_GET["local"]);
         $txt = file(htmlspecialchars($_GET["image"]) . '.txt');
         $firefox = '';
         ?>
 
-                <!--LOADING-->
-                <div class = "loading-mask"></div>
-                <div class = "progressbar" id = "progress"></div>
+        <!--LOADING-->
+        <div class = "loading-mask"></div>
+        <div class = "progressbar" id = "progress"></div>
 
-                <div class = "container">
+        <div class = "container">
 
             <h2 class="page-header" style="margin-top: 0"><?php echo $txt[0]; ?></h2>
 
-                    <div class="col-xs-6">
-                        <a href="<?php echo $adres ?>" title="Suknia <?php echo substr($local, strpos($local, "/")+1)?>" rel="lightbox" >
-                            <img class="img-circle-main img-responsive img-shadow" src="<?php echo $adres ?>" alt="empire" />
-                        </a>
-                    </div>
+            <div class="col-xs-6">
+                <a href="<?php echo $adres ?>" title="Suknia <?php echo substr($local, strpos($local, "/") + 1) ?>" rel="lightbox" >
+                    <img class="img-circle-main img-responsive img-shadow" src="<?php echo $adres ?>" alt="empire" />
+                </a>
+            </div>
 
-                    <div class="col-md-6 col-xs-12">
-                        <p style="margin-bottom: 50px">
-                            <?php
-                            echo trim($txt[1]);
-                            ?>
-                        </p>
-                        <div class="row" style="text-align: center">
-                            <?php
-                            $dirname = $local;
-                            $images = glob($dirname . "*.jpg");
-                            $ilosc = 1;
-                            $granica = 6;
-                            echo '<p class:"page-header">Podobne propozycje: </p>';
-                            
-                            foreach ($images as $image) {
-                                if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
-                                    echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
-                                    . '<button class="ff btn-link" type="submit">'
-                                    . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
-                                    . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
-                                    . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
-                                    . '</button>'
-                                    . '</form>'
-                                    .  $ilosc;
-                                     $ilosc ++;
-                                }
-                               
-                            }
-                            ?>
+            <div class="col-md-6 col-xs-12">
+                <p style="margin-bottom: 50px">
+                    <?php
+                    echo trim($txt[1]);
+                    ?>
+                </p>
+                <div class="row" style="text-align: center">
+                    <?php
+                    $dirname = $local;
+                    $images = glob($dirname . "*.jpg");
+                    $ilosc = 1;
+                    $granica = 6;
+
+                    foreach ($images as $image) {
+                        
+                        if((strpos($image, $imageName)) == TRUE){
+                        
+                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
+                            . '<button class="ff btn-link" type="submit">'
+                            . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
+                            . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
+                            . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
+                            . '</button>'
+                            . '</form>';
+                        }
+                    }
+                    echo '<p class:"page-header">Podobne propozycje: </p>';
+
+                    foreach ($images as $image) {
+                        if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
+                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
+                            . '<button class="ff btn-link" type="submit">'
+                            . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
+                            . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
+                            . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
+                            . '</button>'
+                            . '</form>'
+                            . $ilosc;
+                            $ilosc ++;
+                        }
+                    }
+                    ?>
                 </div>
             </div>
 
