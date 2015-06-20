@@ -72,7 +72,7 @@
 
                     foreach ($images as $image) {
                         
-                        if((strpos($image, $imageName)) == TRUE){
+                        if((strpos($image, $imageName)) == TRUE && $image[strlen ($image)-1] == 's'){
                         
                             echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
                             . '<button class="ff btn-link" type="submit">'
