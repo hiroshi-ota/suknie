@@ -72,15 +72,19 @@
 
                     foreach ($images as $image) {
                         
-                        if((strpos($image, $imageName)) == TRUE && $image[strlen ($image)-1] == 's'){
+                        if((strpos($image, $imageName)) == TRUE && (strstr($image, "_s.") !== False)){
+                            
+                            echo '<a href="'. substr($image, 0, strpos($image, "_")) .'.jpg" title="Suknia '. $imageName .'" rel="lightbox-galery" >
+                                <img class="img-thumbnail form-inline" src="'. $image .'" alt="empire" />
+                                </a>';
                         
-                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
-                            . '<button class="ff btn-link" type="submit">'
-                            . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
-                            . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
-                            . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
-                            . '</button>'
-                            . '</form>';
+//                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
+//                            . '<button class="ff btn-link" type="submit">'
+//                            . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
+//                            . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
+//                            . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
+//                            . '</button>'
+//                            . '</form>';
                         }
                     }
                     echo '<p class:"page-header">Podobne propozycje: </p>';
