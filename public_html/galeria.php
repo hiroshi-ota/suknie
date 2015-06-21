@@ -52,7 +52,7 @@
             <h2 class="page-header" style="margin-top: 0"><?php echo $txt[0]; ?></h2>
 
             <div class="col-xs-6">
-                <a href="<?php echo $adres ?>" title="Suknia <?php echo substr($local, strpos($local, "/") + 1) ?>" rel="lightbox" >
+                <a href="<?php echo $adres ?>" title="Suknia <?php echo $imageName ?>" rel="lightbox" >
                     <img class="img-circle-main img-responsive img-shadow" src="<?php echo $adres ?>" alt="empire" />
                 </a>
             </div>
@@ -72,7 +72,7 @@
 
                     foreach ($images as $image) {
                         
-                        if((strpos($image, $imageName)) == TRUE && (strstr($image, "_s.") !== False)){
+                        if((strpos($image, $imageName)) == TRUE && ($image != $adres) && (strstr($image, "_s.") !== False)){
                             
                             echo '<a href="'. substr($image, 0, strpos($image, "_")) .'.jpg" title="Suknia '. $imageName .'" rel="lightbox-galery" >
                                 <img class="img-thumbnail form-inline" src="'. $image .'" alt="empire" />
@@ -90,7 +90,7 @@
                     echo '<p class:"page-header">Podobne propozycje: </p>';
 
                     foreach ($images as $image) {
-                        if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
+                        if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr($image, "2") == False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
                             echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
                             . '<button class="ff btn-link" type="submit">'
                             . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
