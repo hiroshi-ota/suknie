@@ -57,12 +57,37 @@
                 </a>
             </div>
 
+            <div class="description col-md-6 col-xs-12">
+                <table border="0" class="table">
+                    <tr class="underline">
+                        <td>Dekolt: </td>
+                        <td><?php echo $txt[1] ?></td>
+                    </tr>
+
+                    <tr class="second underline">
+                        <td>Długość rękawa: </td>
+                        <td><?php echo $txt[2] ?></td>
+                    </tr>
+
+                    <tr class="underline">
+                        <td>Długość sukni: </td>
+                        <td><?php echo $txt[3] ?></td>
+                    </tr>
+
+                    <tr class="second underline">
+                        <td>Fason: </td>
+                        <td><?php echo $txt[4] ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rok: </td>
+                        <td><?php echo $txt[5] ?></td>
+                    </tr>
+                </table>
+            </div>
+
             <div class="col-md-6 col-xs-12">
-                <p style="margin-bottom: 50px">
-                    <?php
-                    echo trim($txt[1]);
-                    ?>
-                </p>
+
                 <div class="row" style="text-align: center">
                     <?php
                     $dirname = $local;
@@ -71,13 +96,13 @@
                     $granica = 6;
 
                     foreach ($images as $image) {
-                        
-                        if((strpos($image, $imageName)) == TRUE && ($image != $adres) && (strstr($image, "_s.") !== False)){
-                            
-                            echo '<a href="'. substr($image, 0, strpos($image, "_")) .'.jpg" title="Suknia '. $imageName .'" rel="lightbox-galery" >
-                                <img class="img-thumbnail form-inline" src="'. $image .'" alt="empire" />
+
+                        if ((strpos($image, $imageName)) == TRUE && ($image != $adres) && (strstr($image, "_s.") !== False)) {
+
+                            echo '<a href="' . substr($image, 0, strpos($image, "_")) . '.jpg" title="Suknia ' . $imageName . '" rel="lightbox-galery" >
+                                <img class="img-thumbnail form-inline" src="' . $image . '" alt="empire" />
                                 </a>';
-                        
+
 //                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
 //                            . '<button class="ff btn-link" type="submit">'
 //                            . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
@@ -87,26 +112,32 @@
 //                            . '</form>';
                         }
                     }
-                    echo '<p class:"page-header">Podobne propozycje: </p>';
-
-                    foreach ($images as $image) {
-                        if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr($image, "2") == False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
-                            echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
-                            . '<button class="ff btn-link" type="submit">'
-                            . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
-                            . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
-                            . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
-                            . '</button>'
-                            . '</form>'
-                            . $ilosc;
-                            $ilosc ++;
-                        }
-                    }
                     ?>
                 </div>
+                <div class="opis-kroju">
+                    <p><?php echo $txt[6] ?></p>
+                </div>
             </div>
-
         </div>
+        <div class="container" style="margin-top: 200px">
+            <?php
+            echo '<p>Podobne propozycje: </p>';
+
+            foreach ($images as $image) {
+                if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr($image, "2") == False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
+                    echo '<form action="galeria.php" method="get" target="_blank" style="width: 180px; display: inline-block">'
+                    . '<button class="ff btn-link" type="submit">'
+                    . '<img src="' . $image . '" class="img-thumbnail form-inline"/>'
+                    . '<input name="local" hidden="true" type="text" value="' . $local . '"/>'
+                    . '<input name="image" hidden="true" type="text" value="' . substr($image, 0, strpos($image, "_")) . '"/>'
+                    . '</button>'
+                    . '</form>';
+                }
+            }
+            ?>
+        </div>
+
+
     </body>
 </html>
 

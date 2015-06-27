@@ -11,8 +11,8 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
     background-repeat: repeat-x;
     max-width: 100%;  
-/*    background-image: url("../images/tlo2.png");
-    background-size: cover;*/
+    /*    background-image: url("../images/tlo2.png");
+        background-size: cover;*/
 }
 
 .obrazek{
@@ -45,6 +45,12 @@ a{
     z-index: -100;
 }
 
+hr.fancy {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 #navAndSlider nav{
     width: 70%;
     height: 30px;
@@ -63,6 +69,40 @@ a{
 #onas p{
     text-align: center;
     line-height: 25px;
+}
+
+/*OPISY SUKNI*/
+.description{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.table{
+    /*border: 1px solid #8E236B;*/
+    border-radius: 30px;
+    text-align: center;
+    max-width: 350px !important;
+    margin: auto;
+}
+
+td{
+    padding: 4px!important;
+    border: none !important;
+    /*width: 50px !important;*/
+}
+
+tr{
+    /*border: none !important;*/
+    
+}
+
+tr.underline{
+    border-bottom: 1px solid #8E236B;
+}
+
+.opis-kroju{
+    text-align: center;
+    margin-top: 50px;
 }
 
 /*ZDJĘCIA OKRĄGŁE*/
@@ -145,3 +185,5 @@ a{
     margin: 10px;
     background: black;
 }
+
+
