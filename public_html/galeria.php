@@ -114,12 +114,17 @@
                     }
                     ?>
                 </div>
+                
                 <div class="opis-kroju">
                     <p><?php echo $txt[6] ?></p>
                 </div>
             </div>
+            
         </div>
+        <!--<hr class="fancy" style="bottom: 2px">-->
+        <hr class="fancy navbar-fixed-bottom" style="bottom: 10px; position: absolute">
         <div class="container" style="margin-top: 200px">
+            
             <?php
             echo '<p>Podobne propozycje: </p>';
 
