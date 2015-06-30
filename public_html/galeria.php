@@ -122,7 +122,7 @@
             
         </div>
         <!--<hr class="fancy" style="bottom: 2px">-->
-        <hr class="fancy navbar-fixed-bottom" style="bottom: 10px; position: absolute">
+        <!--<hr class="fancy navbar-fixed-bottom" style="bottom: 10px; position: absolute">-->
         <div class="container" style="margin-top: 100px">
             
             <h2 class="page-header" style="margin-top: 0!important">Podobne propozycje</h2>
