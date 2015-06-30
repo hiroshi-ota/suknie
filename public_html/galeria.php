@@ -123,10 +123,10 @@
         </div>
         <!--<hr class="fancy" style="bottom: 2px">-->
         <hr class="fancy navbar-fixed-bottom" style="bottom: 10px; position: absolute">
-        <div class="container" style="margin-top: 200px">
+        <div class="container" style="margin-top: 100px">
             
+            <h2 class="page-header" style="margin-top: 0!important">Podobne propozycje</h2>
             <?php
-            echo '<p>Podobne propozycje: </p>';
 
             foreach ($images as $image) {
                 if (($image != $adres) && (strstr($image, "_s.") !== False) && (strstr($image, "2") == False) && (strstr(substr($image, 0, strpos($image, ".")), "slider") !== TRUE) && (($ilsoc <= 6) !== FALSE)) {
