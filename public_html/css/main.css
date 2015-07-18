@@ -186,4 +186,11 @@ tr.underline{
     background: black;
 }
 
-
+/*@media only screen and( -webkit-min-device-pixel-ratio: 1.0 ),
+       only screen and(      -o-min-device-pixel-ratio: 1.0 ),
+        only screen and (     -o-min-device-pixel-ratio: 1.0),
+        only screen and (        min-device-pixel-ratio: 1.0) {
+    body {
+        font-size: 1rem;
+    }
+} */
