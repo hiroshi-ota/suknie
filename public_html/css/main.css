@@ -69,6 +69,7 @@ hr.fancy {
 #onas p{
     text-align: center;
     line-height: 25px;
+    //margin-left: 100px;
 }
 
 /*OPISY SUKNI*/
@@ -178,6 +179,7 @@ tr.underline{
 
 .no-js #onas p{
     text-align: center;
+    width: 100%;
 }
 
 /*FIREFOX*/

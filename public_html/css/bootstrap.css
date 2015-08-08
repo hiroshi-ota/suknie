@@ -949,6 +949,7 @@ img {
 }
 .img-rounded {
     border-radius: 50px;
+    height: 100%;
 }
 .img-thumbnail {
     display: inline-block;
